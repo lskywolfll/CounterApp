@@ -37,8 +37,6 @@ function PrimeraApp({ texto, subtitulo }) {
 
             <CounterApp value={contador} />
 
-
-
             {fillIncrements()}
             <button onClick={() => reset()} >Reinicio</button><br></br>
             {fillSubstracts()}
