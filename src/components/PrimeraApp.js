@@ -25,7 +25,7 @@ function PrimeraApp({ texto, subtitulo }) {
     const fillSubstracts = () => {
         return numerosGenericosActions.map(number => (
             <Fragment key={number}>
-                <button onClick={() => restarCantidad(number)} >Agregar +{number}</button><br></br>
+                <button onClick={() => restarCantidad(number)} >Disminuir -{number}</button><br></br>
             </Fragment>
         ))
     }
