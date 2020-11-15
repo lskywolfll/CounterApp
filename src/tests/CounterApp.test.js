@@ -38,4 +38,31 @@ describe('Pruebas en <CounterApp />', () => {
         expect(contador).toBe(valor);
     })
 
+    test('debe incrementar el contador en 1 al hacer click en el boton +1', () => {
+        const wrapper = getCounterApp();
+        const contadorActual = getCounterValueOfWrap(wrapper);
+        wrapper.find('button').at(0).simulate('click')
+        const contadorNuevo = getCounterValueOfWrap(wrapper);
+
+        expect(contadorNuevo).toBe(contadorActual + 1);
+    })
+
+    test('debe decrementar el contador en 1 al hacer click en el boton -1', () => {
+        const wrapper = getCounterApp();
+        const contadorActual = getCounterValueOfWrap(wrapper);
+        wrapper.find('button').at(4).simulate('click')
+        const contadorNuevo = getCounterValueOfWrap(wrapper);
+
+        expect(contadorNuevo).toBe(contadorActual - 1);
+    })
+
+
+    test('debe reiniciar el contador a 0 al hacer click', () => {
+        const wrapper = getCounterApp();
+        wrapper.find('button').at(3).simulate('click')
+        const contadorActual = getCounterValueOfWrap(wrapper);
+
+        expect(contadorActual).toBe(0);
+    })
+
 })
